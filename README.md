@@ -21,7 +21,7 @@ It fetches movie posters and details dynamically from TMDB API and shows top sim
 3. Run the app:
    streamlit run app.py
 
-   ## Live Demo
+## Live Demo
 [Streamlit App Link](https://mini-movie-recommendation-system.streamlit.app/)
 
 ## Tech Stack
