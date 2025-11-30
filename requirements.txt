@@ -1,1 +1,4 @@
 gdown
+streamlit
+pandas
+requests

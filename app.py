@@ -82,13 +82,14 @@ div.stButton > button:hover {{
 def download_pickle():
     # Movie dictionary
     if not os.path.exists("movie_dict.pkl"):
-        url = "https://drive.google.com/file/d/1iCXI2Vf6A14YfSaBhhhAgh8xgznz8LTn/view?usp=sharing"
-        gdown.download(url, "movie_dict.pkl", quiet=False)
-
+        url = "https://drive.google.com/uc?id=YOUR_MOVIE_DICT_FILE_ID"
+        gdown.download(url, "movie_dict.pkl", quiet=False, fuzzy=True)
 
 # LOAD DATA
 
 @st.cache_resource
+@st.cache_data.clear()  # Clears cached pickle if corrupted
+
 def load_data():
     download_pickle()
     with open("movie_dict.pkl", "rb") as f:
