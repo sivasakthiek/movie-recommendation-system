@@ -82,7 +82,7 @@ div.stButton > button:hover {{
 def download_pickle():
     # Movie dictionary
     if not os.path.exists("movie_dict.pkl"):
-        url = "https://drive.google.com/uc?id=YOUR_MOVIE_DICT_FILE_ID"
+        url = "https://drive.google.com/uc?id=1iCXI2Vf6A14YfSaBhhhAgh8xgznz8LTn"
         gdown.download(url, "movie_dict.pkl", quiet=False, fuzzy=True)
 
 # LOAD DATA
