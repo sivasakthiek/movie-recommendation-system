@@ -2,7 +2,8 @@ import streamlit as st
 import pandas as pd
 import requests
 import pickle
-
+import gdown
+import os
 # PAGE CONFIG
 
 st.set_page_config(page_title="Movie Recommender", layout="wide")
@@ -78,12 +79,18 @@ div.stButton > button:hover {{
     """,
     unsafe_allow_html=True
 )
+def download_pickle():
+    # Movie dictionary
+    if not os.path.exists("movie_dict.pkl"):
+        url = "https://drive.google.com/file/d/1iCXI2Vf6A14YfSaBhhhAgh8xgznz8LTn/view?usp=sharing"
+        gdown.download(url, "movie_dict.pkl", quiet=False)
 
 
 # LOAD DATA
 
 @st.cache_resource
 def load_data():
+    download_pickle()
     with open("movie_dict.pkl", "rb") as f:
         movie, cosine_sim = pickle.load(f)
     return movie, cosine_sim
