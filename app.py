@@ -88,7 +88,7 @@ def download_pickle():
 # LOAD DATA
 
 @st.cache_resource
-@st.cache_data.clear()  # Clears cached pickle if corrupted
+#@st.cache_data.clear()  # Clears cached pickle if corrupted
 
 def load_data():
     download_pickle()
